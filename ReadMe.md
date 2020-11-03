@@ -11,7 +11,7 @@
 * Host Profiles
 
 ## Database
-https://drawsql.app/getout/diagrams/getout
+https://drawsql.app/getout/diagrams/getout#
 
 ## Routes
 ### API Endpoints
