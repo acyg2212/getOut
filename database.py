@@ -1,5 +1,5 @@
-from starter_app.models import User
-from starter_app import app, db
+from backend.models import User
+from backend import app, db
 from dotenv import load_dotenv
 load_dotenv()
 

@@ -1,19 +1,45 @@
-import React, { useState } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { NavLink, Redirect } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useHistory } from 'react-router-dom'
+import AuthContext from '../../auth'
 
 const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errs, setErrors] = useState("");
+    const { fetchWithCSRF, setCurrentUserId } = useContext(AuthContext);
+    let history = useHistory();
 
-    const handleSubmit = e => {
+    async function handleSubmit(e) {
         e.preventDefault();
+        async function loginUser() {
+            const response = await fetchWithCSRF(`/login`, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: 'include',
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            });
+
+            const responseData = await response.json();
+            if (!response.ok) {
+                setErrors(responseData.errors);
+            } else {
+                setCurrentUserId(responseData.setCurrentUserId);
+                history.push('/')
+            }
+        }
+        loginUser();
     }
+
 
     return (
         <div className="signin-container">
             <ul>
-
+                {errs.length ? errs.map(error => <li key={error}>{error}</li>) : ""}
             </ul>
             <form onSubmit={handleSubmit}>
                 <h1 className="login-header">Sign In</h1>
