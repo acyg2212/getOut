@@ -12,7 +12,7 @@ const SignIn = () => {
     async function handleSubmit(e) {
         e.preventDefault();
         async function loginUser() {
-            const response = await fetchWithCSRF(`/login`, {
+            const response = await fetchWithCSRF(`api/users/login`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",

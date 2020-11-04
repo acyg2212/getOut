@@ -10,7 +10,7 @@ function App() {
 
   const [fetchWithCSRF, setFetchWithCSRF] = useState(() => fetch);
   const [currentUserId, setCurrentUserId] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const authContextValue = {
     fetchWithCSRF,
     currentUserId,
