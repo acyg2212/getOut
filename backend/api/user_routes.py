@@ -40,3 +40,38 @@ def login():
                 "current_user": current_user.to_dict()}
 
     return {"errors": ["Invalid username, email, and/or password"]}, 401
+
+
+@user_routes.route('/signup', methods=['POST'])
+def signup():
+    if not request.is_json:
+        return jsonify({"msg": "Missing JSON in request"}), 400
+
+    username = request.json.get('username', None)
+    password = request.json.get('password', None)
+    password2 = request.json.get('password2', None)
+    firstName = request.json.get("firstName", None)
+    lastName = request.json.get("lastName", None)
+    email = request.json.get('email', None)
+
+    if not username or not password or not firstName or not lastName or not email:
+        return {"errors": ["Missing required parameters"]}, 400
+
+    if not password == password2:
+        return {"errors": ["Passwords must match each other"]}, 400
+
+    new_user = User(
+        username=username,
+        firstName=firstName,
+        lastName=lastName,
+        email=email,
+        password=password,
+
+    )
+    db.session.add(new_user)
+    db.session.commit()
+    # return redirect('/api/users')
+
+    login_user(new_user)
+    return {"current_user_id": current_user.id,
+            "current_user": current_user.to_dict()}
