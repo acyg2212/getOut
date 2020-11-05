@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import SignIn from './components/SignUpLogInComponents/SignIn';
 import SignUp from './components/SignUpLogInComponents/SignUp';
 import HomePage from './components/HomeScreen/HomePage';
@@ -10,7 +10,7 @@ function App() {
 
   const [fetchWithCSRF, setFetchWithCSRF] = useState(() => fetch);
   const [currentUserId, setCurrentUserId] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const authContextValue = {
     fetchWithCSRF,
     currentUserId,
@@ -47,7 +47,12 @@ function App() {
             return fetch(resource, init);
           }
         });
+        if (authData.current_user_id) {
+          console.log(authData)
+          setCurrentUserId(authData.current_user_id)
+        }
       }
+      setLoading(false)
     }
     restoreCSRF();
   }, []);
@@ -57,17 +62,11 @@ function App() {
       { loading && <div>Loading...</div>}
       {!loading &&
         <BrowserRouter>
-          <NavBar />
+          <NavBar currentUserId={currentUserId} />
           <Switch>
-            <Route exact path='/'>
-              <HomePage />
-            </Route>
-            <Route exact path='/signin'>
-              <SignIn />
-            </Route>
-            <Route exact path='/sign-up'>
-              <SignUp />
-            </Route>
+            <Route exact path='/' component={HomePage} currentUserId={currentUserId} />
+            <Route exact path='/signin' component={SignIn} currentUserId={currentUserId} />
+            <Route exact path='/sign-up' component={SignUp} currentUserId={currentUserId} />
           </Switch>
           {/* <Footer /> */}
         </BrowserRouter>

@@ -1,7 +1,7 @@
 
 from flask import Blueprint, jsonify, request, session
 from backend.models import User, db
-from flask_login import login_user, current_user, logout_user, login_required
+from flask_login import login_user, LoginManager, current_user, logout_user, login_required
 
 user_routes = Blueprint('users', __name__)
 

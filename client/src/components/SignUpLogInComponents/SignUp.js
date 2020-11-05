@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
-import AuthContext from '../../auth'
+import AuthContext from '../../auth';
+import { useHistory } from 'react-router-dom';
+
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState("");
@@ -11,6 +13,7 @@ const SignUp = () => {
 
     const { fetchWithCSRF, setCurrentUserId } = useContext(AuthContext);
     const [errors, setErrors] = useState([]);
+    let history = useHistory;
 
     const signUpSubmit = (e) => {
         e.preventDefault();
@@ -38,7 +41,7 @@ const SignUp = () => {
                 setErrors(responseData.errors);
             } else {
                 setCurrentUserId(responseData.current_user_id)
-                // history.push('/users')
+                history.push('/')
             }
         }
         signupUser();
