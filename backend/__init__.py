@@ -2,11 +2,12 @@ import os
 from flask import Flask, render_template, request, session
 from flask_cors import CORS
 from flask_wtf.csrf import CSRFProtect, generate_csrf
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 
 
 from backend.models import db, User
 from backend.api.user_routes import user_routes
+from backend.api.ridb_routes import ridb_routes
 
 from backend.config import Config
 
@@ -15,10 +16,16 @@ login_manager = LoginManager(app)
 app.config.from_object(Config)
 CSRFProtect(app)
 app.register_blueprint(user_routes, url_prefix='/api/users')
+app.register_blueprint(ridb_routes, url_prefix='/api/ridb')
 db.init_app(app)
 
 # Application Security
 CORS(app)
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
 
 
 @app.after_request
@@ -43,4 +50,5 @@ def react_root(path):
 
 @app.route('/api/csrf/restore')
 def restore_csrf():
-    return {'csrf_token': generate_csrf()}
+    id = current_user.id if current_user.is_authenticated else None
+    return {'csrf_token': generate_csrf(), "current_user_id": id}

@@ -28,7 +28,8 @@ const SignIn = () => {
             if (!response.ok) {
                 setErrors(responseData.errors);
             } else {
-                setCurrentUserId(responseData.setCurrentUserId);
+                console.log(responseData.current_user_id)
+                setCurrentUserId(responseData.current_user_id);
                 history.push('/')
             }
         }
