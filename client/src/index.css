@@ -1,4 +1,49 @@
 /* TODO Add site wide styles */
+/* navbar */
 .navbar-logo {
-    max-height: 100px;
+    height: 100px;
+}
+
+.navbar-div{
+    
+    display: flex;
+    position: sticky;
+    top:0;
+    height:100px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px black solid;
+    opacity: 1;
+   
+}
+
+.navbar-button{
+    margin-bottom: 5px;
+    height: 50px;
+    width: 100px;
+    background-color: olivedrab;
+    border-radius: 10px;
+}
+
+
+/* home */
+.home-container{
+    top:50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar-container{
+    display: flex;
+    border: 1px gray solid;
+    padding: 25px;
+    justify-content: 
+}
+
+.search-bar{
+    height: 25px;
+    width: 250px;
 }

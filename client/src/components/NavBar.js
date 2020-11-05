@@ -15,15 +15,15 @@ const NavBar = ({ currentUserId }) => {
             </div>
             <div>
                 {currentUserId ?
-                    <div>
+                    <div >
                         <a href="/logout">
-                            <span>Log Out</span>
+                            <button className="navbar-button" >Log Out</button>
                         </a>
                     </div> :
                     <div>
-                        <div>
+                        <div >
                             <a href="/signin">
-                                <span>Sign In</span>
+                                <button>Sign In</button>
                             </a>
                         </div>
                         <div>
