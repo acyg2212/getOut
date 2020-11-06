@@ -3,6 +3,7 @@ from flask import Blueprint, jsonify, request, session
 from backend.models import User, db
 from flask_login import login_user, LoginManager, current_user, logout_user, login_required
 
+
 user_routes = Blueprint('users', __name__)
 
 
@@ -44,8 +45,6 @@ def login():
 
 @user_routes.route('/signup', methods=['POST'])
 def signup():
-    if not request.is_json:
-        return jsonify({"msg": "Missing JSON in request"}), 400
 
     username = request.json.get('username', None)
     password = request.json.get('password', None)
@@ -75,3 +74,10 @@ def signup():
     login_user(new_user)
     return {"current_user_id": current_user.id,
             "current_user": current_user.to_dict()}
+
+
+@user_routes.route('/logout', methods=['POST'])
+@login_required
+def logout():
+    logout_user()
+    return {'msg': 'You have been logged out'}, 200

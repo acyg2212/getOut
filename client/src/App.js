@@ -5,6 +5,7 @@ import SignUp from './components/SignUpLogInComponents/SignUp';
 import HomePage from './components/HomeScreen/HomePage';
 import NavBar from './components/NavBar';
 import AuthContext from './auth';
+import AuthRoute from './components/AuthRoute'
 
 function App() {
 
@@ -17,15 +18,6 @@ function App() {
     setCurrentUserId
   };
 
-  const logoutUser = async () => {
-    const response = await fetchWithCSRF('/logout', {
-      method: 'POST',
-      credentials: 'include'
-    });
-    if (response.ok) {
-      setCurrentUserId(null)
-    }
-  }
 
   useEffect(() => {
     async function restoreCSRF() {
@@ -65,8 +57,8 @@ function App() {
           <NavBar currentUserId={currentUserId} />
           <Switch>
             <Route exact path='/' component={HomePage} currentUserId={currentUserId} />
-            <Route exact path='/signin' component={SignIn} currentUserId={currentUserId} />
-            <Route exact path='/sign-up' component={SignUp} currentUserId={currentUserId} />
+            <AuthRoute exact path='/signin' component={SignIn} currentUserId={currentUserId} />
+            <AuthRoute exact path='/sign-up' component={SignUp} currentUserId={currentUserId} />
           </Switch>
           {/* <Footer /> */}
         </BrowserRouter>

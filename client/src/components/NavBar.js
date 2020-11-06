@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom';
 import getOutLogo from '../assets/getOut.png'
+import AuthContext from '../auth'
 
-const NavBar = ({ currentUserId }) => {
+const NavBar = () => {
+
+    const { fetchWithCSRF, setCurrentUserId, currentUserId } = useContext(AuthContext);
+
+    function logOut(e) {
+        e.preventDefault();
+        // Make the following an IIFE?
+        const logoutUser = async () => {
+            const response = await fetchWithCSRF('/api/users/logout', {
+                method: 'POST',
+                credentials: 'include'
+            });
+            if (response.ok) setCurrentUserId(null);
+        }
+        logoutUser();
+
+    }
 
     return (
         <div className="navbar-div">
@@ -16,9 +33,7 @@ const NavBar = ({ currentUserId }) => {
             <div>
                 {currentUserId ?
                     <div >
-                        <a href="/logout">
-                            <button className="navbar-button" >Log Out</button>
-                        </a>
+                        <button className="navbar-button" onClick={logOut}>Log Out</button>
                     </div> :
                     <div>
                         <div >

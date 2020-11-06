@@ -1,5 +1,10 @@
 /* TODO Add site wide styles */
 /* navbar */
+a{
+    text-decoration: none;
+    color: black;
+}
+
 .navbar-logo {
     height: 100px;
 }
@@ -13,7 +18,8 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px black solid;
-    opacity: 1;
+    background-color: white;
+    z-index: 1;
    
 }
 
@@ -40,10 +46,43 @@
     display: flex;
     border: 1px gray solid;
     padding: 25px;
-    justify-content: 
+
+}
+
+.search-results-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 25px;
 }
 
 .search-bar{
     height: 25px;
     width: 250px;
+}
+
+.card-image{
+    width:300px;
+    height:300px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-container{
+    border: 1px black solid;
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.card-span{
+    margin-top: 20px;
+}
+
+.card-h3{
+    text-align: center;
 }

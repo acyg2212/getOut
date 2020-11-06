@@ -40,3 +40,16 @@ class User(db.Model, UserMixin):
             "username": self.username,
             "email": self.email
         }
+
+
+class Activity(db.Model):
+    __tablename__ = "activities"
+    id = db.Column(db.Integer, primary_key=True)
+    activity = db.Column(db.String(100), nullable=False)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "activity": self.activity,
+
+        }

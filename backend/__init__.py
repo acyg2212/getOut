@@ -8,6 +8,7 @@ from flask_login import LoginManager, current_user
 from backend.models import db, User
 from backend.api.user_routes import user_routes
 from backend.api.ridb_routes import ridb_routes
+from backend.api.activity_routes import activities_routes
 
 from backend.config import Config
 
@@ -17,6 +18,7 @@ app.config.from_object(Config)
 CSRFProtect(app)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(ridb_routes, url_prefix='/api/ridb')
+app.register_blueprint(activities_routes, url_prefix='/api/activities')
 db.init_app(app)
 
 # Application Security
