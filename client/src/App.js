@@ -5,18 +5,24 @@ import SignUp from './components/SignUpLogInComponents/SignUp';
 import HomePage from './components/HomeScreen/HomePage';
 import NavBar from './components/NavBar';
 import AuthContext from './auth';
-import AuthRoute from './components/AuthRoute'
+import AuthRoute from './components/AuthRoute';
+import SinglePlace from './components/SinglePlace';
+import SiteContext from './site';
 
 function App() {
 
   const [fetchWithCSRF, setFetchWithCSRF] = useState(() => fetch);
   const [currentUserId, setCurrentUserId] = useState(null);
   const [loading, setLoading] = useState(true);
+
+
   const authContextValue = {
     fetchWithCSRF,
     currentUserId,
     setCurrentUserId
   };
+
+
 
 
   useEffect(() => {
@@ -51,7 +57,7 @@ function App() {
 
   return (
     <AuthContext.Provider value={authContextValue}>
-      { loading && <div>Loading...</div>}
+      {loading && <div>Loading...</div>}
       {!loading &&
         <BrowserRouter>
           <NavBar currentUserId={currentUserId} />
@@ -59,6 +65,7 @@ function App() {
             <Route exact path='/' component={HomePage} currentUserId={currentUserId} />
             <AuthRoute exact path='/signin' component={SignIn} currentUserId={currentUserId} />
             <AuthRoute exact path='/sign-up' component={SignUp} currentUserId={currentUserId} />
+            <Route path='/:id' component={SinglePlace} currentUserId={currentUserId} />
           </Switch>
           {/* <Footer /> */}
         </BrowserRouter>
