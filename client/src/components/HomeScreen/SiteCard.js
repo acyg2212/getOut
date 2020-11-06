@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react'
 import AuthContext from '../../auth'
+import SiteContext from '../../site';
 
-const SiteCard = ({ title, id, description }) => {
+const SiteCard = ({ title, id }) => {
     const { fetchWithCSRF, currentUserId } = useContext(AuthContext);
-    const [imageAray, setImageArray] = useState([])
+    const [imageArray, setImageArray] = useState([]);
     console.log(id)
     useEffect(() => {
         async function getPhoto() {
@@ -33,8 +34,8 @@ const SiteCard = ({ title, id, description }) => {
         <a href={url}>
             <div className="card-container">
                 <div>
-                    {imageAray.length > 0 ? <img className="card-image" src={imageAray[0].URL}
-                        alt={imageAray[0].Title} /> : <div className="card-div">No Image Available</div>}
+                    {imageArray.length > 0 ? <img className="card-image" src={imageArray[0].URL}
+                        alt={imageArray[0].Title} /> : <div className="card-div">No Image Available</div>}
                 </div>
                 <div className="card-h3">
                     <h3 >{title}</h3>
