@@ -13,13 +13,13 @@ const SignUp = () => {
 
     const { fetchWithCSRF, setCurrentUserId } = useContext(AuthContext);
     const [errors, setErrors] = useState([]);
-    let history = useHistory;
+    let history = useHistory();
 
     const signUpSubmit = (e) => {
         e.preventDefault();
         // Make the following an IIFE?
         async function signupUser() {
-            const response = await fetchWithCSRF(`/api/users/signup`, {
+            const response = await fetchWithCSRF(`api/users/signup`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",

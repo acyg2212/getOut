@@ -1,4 +1,4 @@
-from backend.models import User
+from backend.models import User, Activity
 from backend import app, db
 from dotenv import load_dotenv
 load_dotenv()
@@ -19,8 +19,15 @@ with app.app_context():
     # soonmi = User(username='Soon-Mi', email='soonmi@aa.io',
     #               password='password')
     # alissa = User(username='Alissa', email='alissa@aa.io', password='password')
-
+    biking = Activity(activity="Biking")
+    boating = Activity(activity="Boating")
+    camping = Activity(activity="Camping")
+    hiking = Activity(activity="Hiking")
     db.session.add(ian)
+    db.session.add(biking)
+    db.session.add(boating)
+    db.session.add(camping)
+    db.session.add(hiking)
     # db.session.add(javier)
     # db.session.add(dean)
     # db.session.add(angela)
