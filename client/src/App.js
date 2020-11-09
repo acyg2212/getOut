@@ -7,7 +7,8 @@ import NavBar from './components/NavBar';
 import AuthContext from './auth';
 import AuthRoute from './components/AuthRoute';
 import SinglePlace from './components/SinglePlace';
-import SiteContext from './site';
+import Profile from './components/Profile'
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
             <AuthRoute exact path='/signin' component={SignIn} currentUserId={currentUserId} />
             <AuthRoute exact path='/sign-up' component={SignUp} currentUserId={currentUserId} />
             <Route path='/:id' component={SinglePlace} currentUserId={currentUserId} />
+            <ProtectedRoute path='/profile' component={Profile} currentUserId={currentUserId} />
           </Switch>
           {/* <Footer /> */}
         </BrowserRouter>

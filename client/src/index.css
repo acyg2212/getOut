@@ -23,12 +23,23 @@ a{
    
 }
 
+.navbar-rightside{
+    display: flex;
+}
+
 .navbar-button{
     margin-bottom: 5px;
     height: 50px;
     width: 100px;
-    background-color: olivedrab;
-    border-radius: 10px;
+    background-color: white;
+    border: none;
+    font-style: normal;
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.navbar-button:hover {
+    cursor: pointer;
 }
 
 
@@ -143,3 +154,4 @@ a{
 .campsites-headline{
     text-decoration: underline;
 }
+
