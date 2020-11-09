@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Campsites from './Campsites';
+import ImageSlideShow from './ImageSlideShow'
 
 
 
@@ -72,6 +73,7 @@ const SinglePlace = (props) => {
 
                 })}
             </div> : "No Image Available"}
+            {/* {imageArray.length > 0 ? <ImageSlideShow imageArray={imageArray} /> : "No Image Available"} */}
             <h1>{siteData.FacilityName}</h1>
             <div className="dangerously-set-div" dangerouslySetInnerHTML={{ __html: siteData.FacilityDescription }} style={styleObj} />
             <h1 className="campsites-headline">Campsites Nearby</h1>

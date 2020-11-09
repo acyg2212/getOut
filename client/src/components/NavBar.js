@@ -32,10 +32,17 @@ const NavBar = () => {
             </div>
             <div>
                 {currentUserId ?
-                    <div >
-                        <button className="navbar-button" onClick={logOut}>Log Out</button>
+                    <div className="navbar-rightside">
+                        <div >
+                            <a href="/profile">
+                                <button className="navbar-button">My Adventures</button>
+                            </a>
+                        </div>
+                        <div >
+                            <button className="navbar-button" onClick={logOut}>Log Out</button>
+                        </div>
                     </div> :
-                    <div>
+                    <div className="navbar-rightside">
                         <div >
                             <a href="/signin">
                                 <button>Sign In</button>
