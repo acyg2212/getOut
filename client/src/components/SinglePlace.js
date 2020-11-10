@@ -77,6 +77,7 @@ const SinglePlace = (props) => {
             <h1>{siteData.FacilityName}</h1>
             <div className="dangerously-set-div" dangerouslySetInnerHTML={{ __html: siteData.FacilityDescription }} style={styleObj} />
             <h1 className="campsites-headline">Campsites Nearby</h1>
+            <h3> Click Campsite to Add to Places Traveled or Your Wish List</h3>
             <div className="campsite-group-div">
                 {campsites.length > 0 ? campsites.map(campsite => <Campsites campsite={campsite} />) : ""}
             </div>

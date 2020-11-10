@@ -123,6 +123,20 @@ a{
 
 }
 
+.campsite-card-button{
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.campsite-card-button:hover{
+    cursor: pointer;
+}
+
+.campsite-card-button:focus{
+    outline: none;
+}
+
 .campsite-group-div{
     display: flex;
     flex-direction: row;
@@ -155,3 +169,47 @@ a{
     text-decoration: underline;
 }
 
+/* Profile css */
+.profile-buttons{
+    border: none;
+    background-color: white;
+    border-bottom: 5px solid lightgray;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 20px;
+}
+
+.profile-buttons:focus{
+   outline: none;
+   border-bottom: 5px solid olivedrab;
+   
+}
+
+.profile-buttons:hover{
+    cursor: pointer;
+}
+
+.profile-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile-trip-div{
+    margin-top: 21.44px;
+}
+
+.create-a-trip-button{
+    border-style: outset;
+    border-color: olivedrab;
+    background-color: white;
+    height: 60px;
+    border-radius: 35px;
+}
+
+.create-a-trip-button:hover{
+    cursor: pointer;
+}
+
+.create-a-trip-button:focus{
+    outline: none;
+}
