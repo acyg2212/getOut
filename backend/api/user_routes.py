@@ -81,3 +81,10 @@ def signup():
 def logout():
     logout_user()
     return {'msg': 'You have been logged out'}, 200
+
+
+@user_routes.route('/<int:id>')
+def get_first_name(id):
+    get_first = User.query.filter(User.id == id).all()
+
+    return {"user": current_user.to_dict()}

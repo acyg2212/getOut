@@ -66,8 +66,8 @@ function App() {
             <Route exact path='/' component={HomePage} currentUserId={currentUserId} />
             <AuthRoute exact path='/signin' component={SignIn} currentUserId={currentUserId} />
             <AuthRoute exact path='/sign-up' component={SignUp} currentUserId={currentUserId} />
-            <Route path='/:id' component={SinglePlace} currentUserId={currentUserId} />
-            <ProtectedRoute path='/profile' component={Profile} currentUserId={currentUserId} />
+            <ProtectedRoute exact path='/profile' component={Profile} currentUserId={currentUserId} />
+            <Route exact path='/:id' component={SinglePlace} currentUserId={currentUserId} />
           </Switch>
           {/* <Footer /> */}
         </BrowserRouter>
