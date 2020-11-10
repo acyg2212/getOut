@@ -45,12 +45,12 @@ const NavBar = () => {
                     <div className="navbar-rightside">
                         <div >
                             <a href="/signin">
-                                <button>Sign In</button>
+                                <button className="navbar-button">Sign In</button>
                             </a>
                         </div>
                         <div>
                             <a href="/sign-up">
-                                <span>Sign Up</span>
+                                <button className="navbar-button">Sign Up</button>
                             </a>
                         </div>
                     </div>
