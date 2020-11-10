@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Campsites from './Campsites';
-import ImageSlideShow from './ImageSlideShow'
+import ModalWindow from "./ModalWindow";
 
 
 
@@ -10,6 +10,15 @@ const SinglePlace = (props) => {
     const [imageArray, setImageArray] = useState([])
     const [siteData, setSiteData] = useState({})
     const [campsites, setCampsites] = useState([])
+    const [show, setShow] = useState(false);
+    const [campsiteID, setCampsiteID] = useState(null)
+
+
+    const showModal = e => {
+        setCampsiteID(e.target.value)
+        setShow(!show)
+    }
+
 
     const styleObj = {
         'max-width': '700px',
@@ -79,7 +88,15 @@ const SinglePlace = (props) => {
             <h1 className="campsites-headline">Campsites Nearby</h1>
             <h3> Click Campsite to Add to Places Traveled or Your Wish List</h3>
             <div className="campsite-group-div">
-                {campsites.length > 0 ? campsites.map(campsite => <Campsites campsite={campsite} />) : ""}
+                {campsites.length > 0 ? campsites.map(campsite => {
+                    return (
+                        <button className="campsite-card-button" onClick={showModal} value={campsite.CampsiteID}>
+                            <Campsites campsite={campsite} />
+                        </button>)
+                }) : ""}
+            </div>
+            <div className="modal-window-container">
+                <ModalWindow onClose={showModal} show={show} campsiteID={campsiteID} />
             </div>
         </div>
     )
