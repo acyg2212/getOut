@@ -43,3 +43,11 @@ def get_trips(id):
         Trip.user_id == id, Trip.wish_list == "false").all()
 
     return{"trips": [trip.to_dict() for trip in trips]}
+
+
+@trips_routes.route('/wishlist/<id>')
+def get_wishlist(id):
+    trips = Trip.query.filter(
+        Trip.user_id == id, Trip.wish_list == "true").all()
+
+    return{"trips": [trip.to_dict() for trip in trips]}

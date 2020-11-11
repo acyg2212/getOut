@@ -272,3 +272,7 @@ h4{
 .trip-container{
     margin-top: 25px;
 }
+
+.profile-trip-header{
+    text-decoration: underline;
+}
