@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react'
-import AuthContext from '../../auth'
-import SiteContext from '../../site';
+import AuthContext from '../../auth';
 
 const SiteCard = ({ title, id }) => {
-    const { fetchWithCSRF, currentUserId } = useContext(AuthContext);
+    const { fetchWithCSRF } = useContext(AuthContext);
     const [imageArray, setImageArray] = useState([]);
     console.log(id)
     useEffect(() => {

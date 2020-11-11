@@ -9,7 +9,7 @@ const HomePage = () => {
     const [searchData, setSearchData] = useState(null)
     const [activityArray, setActivityArray] = useState([])
     const [selectedValue, setSelectedValue] = useState(null)
-    const { fetchWithCSRF, currentUserId } = useContext(AuthContext);
+    const { fetchWithCSRF } = useContext(AuthContext);
 
     const selectorValue = (e) => {
         setSelectedValue(e.target.value)

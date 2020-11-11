@@ -133,6 +133,7 @@ a{
 .campsite-card-button:hover{
     cursor: pointer;
     opacity: 1;
+    transform: scale(1.025);
 }
 
 .campsite-card-button:focus{
@@ -231,3 +232,29 @@ a{
     min-height:150px;
 }
     
+.modal-form-div{
+    display: flex;
+    margin-left: 15px;
+}
+
+.create-post-headline{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-button{
+    margin-top:10px;
+    margin-right:10px;
+}
+
+#adventure-create-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
