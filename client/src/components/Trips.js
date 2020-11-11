@@ -25,9 +25,9 @@ const Trips = () => {
     return (
         <div className="trip-container">
             <div className="trip-line">
-                <h4>Date</h4>
-                <h4>Campground</h4>
-                <h4>Campsite</h4>
+                <h4 className="profile-trip-header">Date</h4>
+                <h4 className="profile-trip-header">Campground</h4>
+                <h4 className="profile-trip-header">Campsite</h4>
             </div>
             {trips.length > 0 ? trips.map((trip, index) => {
                 return (
