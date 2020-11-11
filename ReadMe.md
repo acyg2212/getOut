@@ -4,11 +4,11 @@
 * Search for sights
 * Bookings
 * Campsite Info
-* Reviews
+* Trips
 
 ### Bonus Features
-* Messaging
-* Host Profiles
+* reviews
+* Messaging other users
 
 ## Database
 https://drawsql.app/getout/diagrams/getout#
@@ -20,12 +20,12 @@ https://drawsql.app/getout/diagrams/getout#
     * POST / - Create new user
     * PUT /:id - Edit user info
     * DELETE /:id - Delete user
-2. Blueprint: 'reservations', url_prefix = "/api/reservations"
-    * GET / - get all reservations
-    * GET /:id - get one reservation
-    * PUT /:id - edit one reservation
-    * POST / - post a new reservation
-    * DELETE /:id - delete one reservation
+2. Blueprint: 'trips', url_prefix = "/api/trips"
+    * GET / - get all trips
+    * GET /:id - get one trip
+    * PUT /:id - edit one trip
+    * POST / - post a new trip
+    * DELETE /:id - delete one trip
 3. Blueprint: 'sites', url_prefix = "/api/sites"
     * GET / - get all sites
     * GET /:id - get singular site
