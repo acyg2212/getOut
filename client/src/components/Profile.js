@@ -31,8 +31,6 @@ const Profile = () => {
         <div className="profile-container">
             <div className="profile-first-name">
                 <h1>{firstName}</h1>
-                {/* <button className="create-a-trip-button" onClick={showProfileForm} > Create A Trip </button>
-                {profileForm ? <ProfileForm /> : ''} */}
             </div>
             <div className="profile-right-side">
                 <div className="profile-trip-div">
