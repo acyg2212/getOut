@@ -48,7 +48,7 @@ def get_single_facility(id):
         f'https://ridb.recreation.gov/api/v1/facilities/{id}/',
         params=params
     )
-    print(response.text)
+
     return{"response": response.text}
 
 
@@ -61,7 +61,7 @@ def get_single_facility_photo(id):
         f'https://ridb.recreation.gov/api/v1/facilities/{id}/media',
         params=params
     )
-    print(response.text)
+
     return{"response": response.text}
 
 
@@ -73,6 +73,19 @@ def campsites(id):
     }
     response = requests.get(
         f'https://ridb.recreation.gov/api/v1/facilities/{id}/campsites',
+        params=params
+    )
+
+    return{"response": response.text}
+
+
+@ridb_routes.route('/campsite/<int:id>')
+def campsite(id):
+    params = {
+        'apikey': Config.APIKey,
+    }
+    response = requests.get(
+        f'https://ridb.recreation.gov/api/v1/campsites/{id}',
         params=params
     )
     print(response.text)

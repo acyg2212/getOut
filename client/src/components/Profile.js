@@ -3,12 +3,11 @@ import AuthContext from '../auth';
 import Trips from './Trips';
 import WishList from './WishList';
 import Reviews from './Reviews';
-import ProfileForm from './ProfileForm';
+
 
 const Profile = () => {
-    const { currentUserId, fetchWithCSRF } = useContext(AuthContext);
+    const { currentUserId } = useContext(AuthContext);
     const [profileToggle, setProfileToggle] = useState(0)
-    const [profileForm, setProfileForm] = useState(false)
     const [firstName, setFirstName] = useState('')
 
     useEffect(() => {
@@ -27,9 +26,6 @@ const Profile = () => {
         setProfileToggle(e.target.value);
     }
 
-    const showProfileForm = (e) => {
-        setProfileForm(!profileForm)
-    }
 
     return (
         <div className="profile-container">

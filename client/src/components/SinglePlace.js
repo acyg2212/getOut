@@ -11,12 +11,13 @@ const SinglePlace = (props) => {
     const [siteData, setSiteData] = useState({})
     const [campsites, setCampsites] = useState([])
     const [show, setShow] = useState(false);
-    const [campsiteID, setCampsiteID] = useState(null)
+    const [campsite, setCampsite] = useState(null)
 
 
     const showModal = e => {
-        setCampsiteID(e.target.value)
+        setCampsite(e.target.value)
         setShow(!show)
+        console.log(e.target.value)
     }
 
 
@@ -90,13 +91,13 @@ const SinglePlace = (props) => {
             <div className="campsite-group-div">
                 {campsites.length > 0 ? campsites.map(campsite => {
                     return (
-                        <button className="campsite-card-button" onClick={showModal} value={campsite.CampsiteID}>
+                        <button className="campsite-card-button" onClick={showModal} value={campsite.CampsiteName}>
                             <Campsites campsite={campsite} />
                         </button>)
                 }) : ""}
             </div>
             <div className="modal-window-container">
-                <ModalWindow onClose={showModal} show={show} campsiteID={campsiteID} />
+                <ModalWindow onClose={showModal} show={show} facilityName={siteData.FacilityName} campsite={campsite} />
             </div>
         </div>
     )

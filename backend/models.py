@@ -60,7 +60,7 @@ class Trip(db.Model):
     __tablename__ = "trips"
     id = db.Column(db.Integer, primary_key="true")
     site_name = db.Column(db.String, nullable=False)
-    site_id = db.Column(db.Integer, nullable=False)
+    campName = db.Column(db.String, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     wish_list = db.Column(db.Boolean, default=False)
     date_traveled = db.Column(db.Date)
@@ -69,7 +69,7 @@ class Trip(db.Model):
         return {
             "id": self.id,
             "site_name": self.site_name,
-            "site_id": self.site_id,
+            "campName": self.campName,
             "user_id": self.user_id,
             "wish_list": self.wish_list,
             "date_traveled": self.date_traveled
