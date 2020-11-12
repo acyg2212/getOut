@@ -62,8 +62,8 @@ const ModalWindow = (props) => {
             if (!response.ok) {
                 console.error(responseData)
             } else {
-                console.log(responseData)
-                history.push('/')
+
+                history.push('/profile')
             }
         }
         submitAdventure();
@@ -85,12 +85,6 @@ const ModalWindow = (props) => {
                         <label for="facilityName">Facility Name:</label>
                         <input type="text" name="facilityName" value={props.facilityName} readOnly />
                     </div>
-                    {/* {camp ?
-                        <div className="modal-form-div">
-                            <label for="campsiteName">Campsite Name:</label>
-                            <input type="text" name="campsiteName" value={camp.CampsiteName} readOnly />
-                        </div>
-                        : ""} */}
                     <div className="modal-form-div">
                         <label for="wishList">Add to Wish List:</label>
                         <input type="checkbox" name="wishList" onChange={checkboxChecked} />

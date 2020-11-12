@@ -44,6 +44,7 @@ const Trips = () => {
         }
         getTrips();
     }, [response])
+
     const convertDate = (data) => {
         let [month, date, year] = new Date(data).toLocaleDateString("en-US").split("/")
         return `${month}/ ${date}/ ${year}`

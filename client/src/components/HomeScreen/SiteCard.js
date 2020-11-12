@@ -4,7 +4,7 @@ import AuthContext from '../../auth';
 const SiteCard = ({ title, id }) => {
     const { fetchWithCSRF } = useContext(AuthContext);
     const [imageArray, setImageArray] = useState([]);
-    console.log(id)
+
     useEffect(() => {
         async function getPhoto() {
             const response = await fetchWithCSRF(`/api/ridb/facility`, {

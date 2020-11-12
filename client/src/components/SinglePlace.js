@@ -17,18 +17,16 @@ const SinglePlace = (props) => {
     const showModal = e => {
         setCampsite(e.target.value)
         setShow(!show)
-        console.log(e.target.value)
     }
 
 
     const styleObj = {
-        'max-width': '700px',
-        'text-align': 'center',
-        'border-top': "1px solid black"
+        'maxWidth': '700px',
+        'textAlign': 'center',
+        'borderTop': "1px solid black"
     }
 
     useEffect(() => {
-        console.log(props.location.pathname)
         async function getPageInfo() {
             const response = await fetch(`/api/ridb/facility/${props.location.pathname}`)
             if (!response.ok) {
@@ -37,7 +35,6 @@ const SinglePlace = (props) => {
                 let data = responseData.response;
                 let javaData = JSON.parse(data);
                 setSiteData(javaData);
-                console.log("SinglePlaceSiteData", javaData)
             }
         }
         getPageInfo()
@@ -52,12 +49,10 @@ const SinglePlace = (props) => {
                 let data = responseData.response
                 let javaData = JSON.parse(data)
                 setImageArray(javaData.RECDATA)
-                console.log(javaData.RECDATA)
             }
         }
         getSingleFacilityPhoto()
     }, [props.location.pathname])
-    console.log(imageArray.length > 0)
 
     useEffect(() => {
         async function getCampsites() {
@@ -68,7 +63,6 @@ const SinglePlace = (props) => {
                 let data = responseData.response
                 let javaData = JSON.parse(data)
                 setCampsites(javaData.RECDATA)
-                console.log(javaData.RECDATA)
             }
         }
         getCampsites()
@@ -79,7 +73,7 @@ const SinglePlace = (props) => {
             {imageArray.length > 0 ? <div className="single-place-image-div">
                 {imageArray.map(image => {
 
-                    return <img className="single-place-image" src={image.URL} alt={image.Title} />
+                    return <img className="single-place-image" key={image.EntityMediaID} src={image.URL} alt={image.Title} />
 
                 })}
             </div> : "No Image Available"}
@@ -91,7 +85,7 @@ const SinglePlace = (props) => {
             <div className="campsite-group-div">
                 {campsites.length > 0 ? campsites.map(campsite => {
                     return (
-                        <button className="campsite-card-button" onClick={showModal} value={campsite.CampsiteID}>
+                        <button className="campsite-card-button" onClick={showModal} key={campsite.CampsiteID} value={campsite.CampsiteID}>
                             <Campsites campsite={campsite} />
                         </button>)
                 }) : ""}

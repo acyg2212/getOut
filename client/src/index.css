@@ -284,6 +284,8 @@ h4{
 
 .profile-trip-header{
     text-decoration: underline;
+    display: flex;
+    justify-content: end;
 }
 
 .trips-wishlist-link{
@@ -297,4 +299,10 @@ h4{
 
 .link-wishlist:hover{
     text-decoration: underline;
+}
+
+.profile-right-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

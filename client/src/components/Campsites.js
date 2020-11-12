@@ -12,8 +12,8 @@ const Campsites = ({ campsite }) => {
             <h3>{campsite.CampsiteName}</h3>
             <ul>
                 <h5>Permitted Equipment</h5>
-                {campsite.PERMITTEDEQUIPMENT.length > 0 ? campsite.PERMITTEDEQUIPMENT.map(equipment => {
-                    return <li>{equipment.EquipmentName}</li>
+                {campsite.PERMITTEDEQUIPMENT.length > 0 ? campsite.PERMITTEDEQUIPMENT.map((equipment, i) => {
+                    return <li key={i}>{equipment.EquipmentName}</li>
                 }) : ""}
             </ul>
 

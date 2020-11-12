@@ -55,7 +55,6 @@ const HomePage = () => {
                 let data = responseData.response
                 let javaData = JSON.parse(data)
                 setSearchData(javaData.RECDATA)
-                console.log("DATA", javaData)
 
             }
         }

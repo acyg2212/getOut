@@ -9,7 +9,7 @@ const NavBar = () => {
 
     function logOut(e) {
         e.preventDefault();
-        // Make the following an IIFE?
+
         const logoutUser = async () => {
             const response = await fetchWithCSRF('/api/users/logout', {
                 method: 'POST',
