@@ -91,7 +91,7 @@ const SinglePlace = (props) => {
             <div className="campsite-group-div">
                 {campsites.length > 0 ? campsites.map(campsite => {
                     return (
-                        <button className="campsite-card-button" onClick={showModal} value={campsite.CampsiteName}>
+                        <button className="campsite-card-button" onClick={showModal} value={campsite.CampsiteID}>
                             <Campsites campsite={campsite} />
                         </button>)
                 }) : ""}

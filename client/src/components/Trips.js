@@ -31,11 +31,13 @@ const Trips = () => {
             </div>
             {trips.length > 0 ? trips.map((trip, index) => {
                 return (
-                    <div key={index} className="trip-line">
-                        <h4>{convertDate(trip.date_traveled)}</h4>
-                        <h4>{trip.site_name}</h4>
-                        <h4>{trip.campName}</h4>
-                    </div>
+                    <a href={`/${trip.facility_id}`}>
+                        <div key={index} className="trip-line">
+                            <h4>{convertDate(trip.date_traveled)}</h4>
+                            <h4>{trip.site_name}</h4>
+                            <h4>{trip.campName}</h4>
+                        </div>
+                    </a>
                 )
             }) : ''}
         </div>
