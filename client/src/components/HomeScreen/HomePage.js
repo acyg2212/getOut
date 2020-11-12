@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import AuthContext from '../../auth'
 import SiteCard from './SiteCard'
+import landScape from '../../assets/landscape.jpg'
 
 
 const HomePage = () => {
@@ -66,6 +67,7 @@ const HomePage = () => {
     return (
         <div className="home-container">
             <h1>Find Your Next Adventure</h1>
+
             <form onSubmit={searchBarFunction}>
                 <div className="search-bar-container">
                     <div>
@@ -86,6 +88,8 @@ const HomePage = () => {
                     </div>
                 </div>
             </form>
+            <img className="landscape-img" src={landScape} alt="landscape of rocks and sand" />
+
             <div className="search-results-container">
                 {searchData ? searchData.map(site => {
                     return (

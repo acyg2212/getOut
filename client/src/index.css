@@ -53,11 +53,18 @@ a{
     align-items: center;
 }
 
+
+.landscape-img{
+    z-index: 0;
+    width: initial;
+    height: 400px;
+    margin-top: 10px;
+}
 .search-bar-container{
     display: flex;
     border: 1px gray solid;
     padding: 25px;
-
+    
 }
 
 .search-results-container{
