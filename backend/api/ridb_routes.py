@@ -79,8 +79,9 @@ def campsites(id):
     return{"response": response.text}
 
 
-@ridb_routes.route('/campsite/<int:id>')
+@ridb_routes.route('/campsite/<id>')
 def campsite(id):
+    print("HERE")
     params = {
         'apikey': Config.APIKey,
     }

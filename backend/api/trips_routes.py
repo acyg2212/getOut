@@ -13,6 +13,8 @@ def trips():
     wish_list = request.json.get('wishList', None)
     user_id = request.json.get("currentUserId", None)
     date_traveled = request.json.get("startDate", None)
+    camp_id = request.json.get("campID", None)
+    facility_id = request.json.get("facilityID", None)
 
     if wish_list:
         new_trip = Trip(
@@ -20,6 +22,8 @@ def trips():
             site_name=site_name,
             wish_list=wish_list,
             user_id=user_id,
+            camp_id=camp_id,
+            facility_id=facility_id
 
         )
     else:
@@ -28,7 +32,9 @@ def trips():
             site_name=site_name,
             wish_list=wish_list,
             user_id=user_id,
-            date_traveled=date_traveled
+            date_traveled=date_traveled,
+            camp_id=camp_id,
+            facility_id=facility_id
         )
 
     db.session.add(new_trip)

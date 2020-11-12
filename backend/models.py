@@ -64,6 +64,8 @@ class Trip(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     wish_list = db.Column(db.Boolean, default=False)
     date_traveled = db.Column(db.Date)
+    camp_id = db.Column(db.Integer, nullable=False)
+    facility_id = db.Column(db.Integer, nullable=False)
 
     def to_dict(self):
         return {
@@ -72,5 +74,7 @@ class Trip(db.Model):
             "campName": self.campName,
             "user_id": self.user_id,
             "wish_list": self.wish_list,
-            "date_traveled": self.date_traveled
+            "date_traveled": self.date_traveled,
+            "camp_id": self.camp_id,
+            "facility_id": self.facility_id
         }
