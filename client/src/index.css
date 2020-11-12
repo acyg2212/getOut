@@ -270,6 +270,8 @@ a{
 .trip-line{
     display: flex;
    justify-content: space-around;
+   flex-direction: row;
+   flex-wrap: nowrap;
 }
 h4{
     margin-left: 15px;
@@ -281,5 +283,18 @@ h4{
 }
 
 .profile-trip-header{
+    text-decoration: underline;
+}
+
+.trips-wishlist-link{
+    display: flex;
+    flex-direction: row;
+}
+
+.delete-trip-button{
+    max-height: 20px;
+}
+
+.link-wishlist:hover{
     text-decoration: underline;
 }
