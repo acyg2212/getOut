@@ -57,3 +57,12 @@ def get_wishlist(id):
         Trip.user_id == id, Trip.wish_list == "true").all()
 
     return{"trips": [trip.to_dict() for trip in trips]}
+
+
+@trips_routes.route('/delete/<id>', methods=['DELETE'])
+def delete_trip(id):
+    pid = (int(id))
+    get_trip = Trip.query.filter(Trip.id == pid).delete()
+    db.session.commit()
+    return {"Response":
+            "Deleted"}

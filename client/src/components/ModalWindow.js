@@ -37,7 +37,7 @@ const ModalWindow = (props) => {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        console.log(camp)
+
         let campID = camp[0].CampsiteID;
         let facilityID = camp[0].FacilityID;
         let campsiteName = camp[0].CampsiteName;
