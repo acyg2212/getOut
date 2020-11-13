@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import getOutLogo from '../assets/getOut.png'
 import AuthContext from '../auth'
 
 const NavBar = () => {
 
     const { fetchWithCSRF, setCurrentUserId, currentUserId } = useContext(AuthContext);
+    let history = useHistory();
 
     function logOut(e) {
         e.preventDefault();
@@ -16,6 +17,7 @@ const NavBar = () => {
                 credentials: 'include'
             });
             if (response.ok) setCurrentUserId(null);
+            history.push('/')
         }
         logoutUser();
 

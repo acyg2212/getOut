@@ -9,7 +9,7 @@ import AuthRoute from './components/AuthRoute';
 import SinglePlace from './components/SinglePlace';
 import Profile from './components/Profile'
 import ProtectedRoute from './components/ProtectedRoute';
-
+import Footer from './components/Footer'
 function App() {
 
   const [fetchWithCSRF, setFetchWithCSRF] = useState(() => fetch);
@@ -69,7 +69,7 @@ function App() {
             <ProtectedRoute exact path='/profile' component={Profile} currentUserId={currentUserId} />
             <Route exact path='/:id' component={SinglePlace} currentUserId={currentUserId} />
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </BrowserRouter>
       }
     </AuthContext.Provider>

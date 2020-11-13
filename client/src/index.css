@@ -45,12 +45,13 @@ a{
 
 /* home */
 .home-container{
-    top:50px;
+    top:40px;
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+   padding-bottom: 25px;
 }
 
 
@@ -203,6 +204,8 @@ a{
 .profile-container{
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 25px;
+    
 }
 
 .profile-trip-div{
@@ -305,4 +308,34 @@ h4{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* footer */
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    border-top: black 1px solid;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    bottom: 0;
+    width: 99%;
+    padding-bottom: 15px;
+    background-color: rgba(255, 255, 255, 1);
+    max-height: 0px;
+}
+
+.partner-containers{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-card-div{
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px gray solid;
+    padding: 15px;
+    background-color: #e6efd9;
+    border-radius: 5px;
+    
 }
