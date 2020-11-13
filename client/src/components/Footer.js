@@ -17,7 +17,7 @@ const Footer = () => {
                         <li>Leave no trace</li>
                         <li>Build an inclusive outdoors</li>
                     </ol>
-                    <a clasName="footer-link" href="https://www.recreateresponsibly.org/">Learn More</a>
+                    <a className="footer-link" href="https://www.recreateresponsibly.org/">Learn More</a>
                 </div>
                 <div className="footer-card-div">
                     <h4>Leave No Trace</h4>
