@@ -399,3 +399,25 @@ a:hover{
     margin-bottom: 5px;
     text-decoration: underline;
 }
+
+/* sign up  */
+
+.sign-up-container{
+    height:500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up-form{
+     display: flex;
+    flex-flow: column;
+    align-items: center;
+    border: 2px olive solid;
+    border-radius: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    min-width: 250px;
+    min-height: 250px;
+}
