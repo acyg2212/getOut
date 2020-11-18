@@ -68,7 +68,7 @@ const WishList = () => {
                     </div>
 
                 )
-            }) : ''}
+            }) : <a href="/">Click here to search for some items to add to your wish list.</a>}
         </div>
     )
 }

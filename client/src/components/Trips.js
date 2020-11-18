@@ -70,7 +70,7 @@ const Trips = () => {
                         <button className="delete-trip-button" onClick={handleDelete} value={trip.id}>x</button>
                     </div>
                 )
-            }) : ''}
+            }) : <a href="/">Looks like you need to add some trips to your log.</a>}
         </div >
     )
 }

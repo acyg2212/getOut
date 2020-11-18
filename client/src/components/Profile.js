@@ -7,7 +7,7 @@ import Reviews from './Reviews';
 
 const Profile = () => {
     const { currentUserId } = useContext(AuthContext);
-    const [profileToggle, setProfileToggle] = useState(0)
+    const [profileToggle, setProfileToggle] = useState("1")
     const [firstName, setFirstName] = useState('')
 
     useEffect(() => {
