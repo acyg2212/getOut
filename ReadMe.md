@@ -2,11 +2,11 @@
 getOut is an outdoor app. It helps users find places to go camp, hike or bike.
 
 ## Screenshots
-
+Landing Page
 ![Landing Page](client/src/assets/landingPage.png)
-
+Show Page
 ![Show Page](client/src/assets/campground-show-page.png)
-
+Sign up screen
 ![Sign Up Screen](client/src/assets/sign-up.png)
 
 ## Features
