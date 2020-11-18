@@ -42,7 +42,7 @@ const SignIn = () => {
             <ul>
                 {errs.length ? errs.map(error => <li key={error}>{error}</li>) : ""}
             </ul>
-            <form onSubmit={handleSubmit}>
+            <form className="sign-in-form" onSubmit={handleSubmit}>
                 <h1 className="login-header">Sign In</h1>
                 <p className="form-p">Sign in below or</p>
                 <a className="form-link" href='/sign-up'>create an account.</a>
@@ -52,13 +52,16 @@ const SignIn = () => {
                         type="email"
                         placeholder="Email"
                         required />
+                </div>
+                <div>
                     <input onChange={e => setPassword(e.target.value)}
                         value={password || ""}
                         type="password"
                         placeholder="Password"
                         required />
-                    <button type="submit">Sign In</button>
                 </div>
+                <button type="submit">Sign In</button>
+                <button type="submit">Demo User</button>
             </form>
         </div>
     )

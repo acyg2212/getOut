@@ -69,7 +69,9 @@ function App() {
             <ProtectedRoute exact path='/profile' component={Profile} currentUserId={currentUserId} />
             <Route exact path='/:id' component={SinglePlace} currentUserId={currentUserId} />
           </Switch>
-          <Footer />
+          <footer>
+            <Footer />
+          </footer>
         </BrowserRouter>
       }
     </AuthContext.Provider>

@@ -2,9 +2,9 @@
 
 ## Features
 * Search for sights
-* Bookings
+* add and delete wishlist
 * Campsite Info
-* Trips
+* add and delete Trips
 
 ### Bonus Features
 * reviews

@@ -37,6 +37,10 @@ const ModalWindow = (props) => {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        if (!currentUserId) {
+            history.push('/signin')
+
+        }
 
         let campID = camp[0].CampsiteID;
         let facilityID = camp[0].FacilityID;
