@@ -11,6 +11,7 @@ const SignIn = () => {
 
     async function handleSubmit(e) {
         e.preventDefault();
+
         async function loginUser() {
             const response = await fetchWithCSRF(`api/users/login`, {
                 method: 'POST',
@@ -36,6 +37,37 @@ const SignIn = () => {
         loginUser();
     }
 
+    const tryDemo = () => {
+        setEmail('demo@demo.com')
+        setPassword("password")
+
+
+        async function loginUser() {
+            const response = await fetchWithCSRF(`api/users/login`, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: 'include',
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            });
+
+            const responseData = await response.json();
+            if (!response.ok) {
+                setErrors(responseData.errors);
+            } else {
+                console.log(responseData.current_user_id)
+                setCurrentUserId(responseData.current_user_id);
+                history.push('/')
+            }
+        }
+        loginUser();
+
+    }
+
 
     return (
         <div className="signin-container">
@@ -43,7 +75,8 @@ const SignIn = () => {
                 {errs.length ? errs.map(error => <li key={error}>{error}</li>) : ""}
             </ul>
             <form className="sign-in-form" onSubmit={handleSubmit}>
-                <h1 className="login-header">Sign In</h1>
+                <h1 className="login-header">Welcome Back</h1>
+                <h4>Let's get you outside</h4>
                 <p className="form-p">Sign in below or</p>
                 <a className="form-link" href='/sign-up'>create an account.</a>
                 <div>
@@ -51,17 +84,17 @@ const SignIn = () => {
                         value={email || ""}
                         type="email"
                         placeholder="Email"
-                        required />
+                    />
                 </div>
                 <div>
                     <input onChange={e => setPassword(e.target.value)}
                         value={password || ""}
                         type="password"
                         placeholder="Password"
-                        required />
+                    />
                 </div>
                 <button type="submit">Sign In</button>
-                <button type="submit">Demo User</button>
+                <button onClick={tryDemo}>Demo User</button>
             </form>
         </div>
     )

@@ -50,7 +50,7 @@ const SignUp = () => {
 
     return (
         <div className="sign-up-container">
-            <form onSubmit={signUpSubmit}>
+            <form className="sign-up-form" onSubmit={signUpSubmit}>
                 <h3>Create a getOut Account</h3>
                 <p className="form-p">Create a new account below</p>
                 <a className="form-link" href=" /signin">or sign in here.</a>
