@@ -16,10 +16,11 @@ const HomePage = () => {
         setSelectedValue(e.target.value)
     }
 
+
     useEffect(() => {
         (async () => {
             try {
-                const res = await fetch(`/api/activities`)
+                const res = await fetch(`/api/activities/`)
 
                 if (res.ok) {
                     const data = await res.json()

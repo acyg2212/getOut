@@ -32,7 +32,7 @@ def getSearch():
 
     }
     response = requests.get(
-        f'https://ridb.recreation.gov/api/v1/facilities',
+        f'https://ridb.recreation.gov/api/v1/facilities/',
         # auth=auth,
         params=params
     )
@@ -45,7 +45,7 @@ def get_single_facility(id):
         'apikey': Config.APIKey
     }
     response = requests.get(
-        f'https://ridb.recreation.gov/api/v1/facilities/{id}/',
+        f'https://ridb.recreation.gov/api/v1/facilities/{id}',
         params=params
     )
 
