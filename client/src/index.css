@@ -234,7 +234,7 @@ a{
     justify-content: space-evenly;
     padding-bottom: 25px;
     height:675;
-    background-image: url('/Users/aaroncygnarowicz/Desktop/coding/getOut/client/src/assets/camp-background.jpg');
+    background-image: url('assets/camp-background.jpg');
     background-size: cover;
     background-position: bottom;
     
