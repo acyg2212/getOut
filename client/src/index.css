@@ -273,7 +273,21 @@ a{
     z-index: 1;
     min-height:150px;
 }
-    
+
+.login-modal{
+    position: fixed;
+    left: 50%;
+    top:20%;
+    background-color: rgba(255,255,255,1);
+    border-radius: 15px;
+    border: 1px black solid;
+}
+ 
+.login-button-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
 .modal-form-div{
     display: flex;
     margin-left: 15px;
@@ -429,25 +443,25 @@ a:hover{
 }
 
 /* sign in */
-.signin-container{
-    height:500px;
+/* .signin-container{
+    background-color: none;
     display: flex;
     align-items: center;
     justify-content: center;
     
-}
+} */
 
 .sign-in-form{
     display: flex;
     flex-flow: column;
     align-items: center;
-    border: 2px olive solid;
+    /* border: 2px olive solid; */
     border-radius: 10px;
     padding-right: 10px;
     padding-left: 10px;
     padding-bottom: 10px;
     min-width: 250px;
-    min-height: 250px;
+    /* min-height: 250px; */
 
 }
 
