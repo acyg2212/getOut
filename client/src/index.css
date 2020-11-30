@@ -65,6 +65,9 @@ a{
     display: flex;
     border: 1px gray solid;
     padding: 25px;
+    border-radius: 25px;
+    align-items: center;
+    background-color: forestgreen;
     
 }
 
@@ -79,6 +82,31 @@ a{
     height: 25px;
     width: 250px;
 }
+
+.state-sites-div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+
+}
+
+.state-sites-button{
+    border: none;
+    background-color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.state-sites-button:hover{
+    cursor: pointer;
+}
+
+.state-sites-img{
+    height:300px;
+    width: 300px;
+    border-radius: 15px;
+}
+
 
 .card-image{
     width:300px;
