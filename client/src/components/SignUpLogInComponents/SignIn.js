@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useHistory } from 'react-router-dom'
 import AuthContext from '../../auth'
 
-const SignIn = () => {
+const SignIn = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errs, setErrors] = useState("");
@@ -62,6 +62,8 @@ const SignIn = () => {
                 console.log(responseData.current_user_id)
                 setCurrentUserId(responseData.current_user_id);
                 history.push('/')
+
+
             }
         }
         loginUser();

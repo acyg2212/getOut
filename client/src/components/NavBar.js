@@ -1,9 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom';
 import getOutLogo from '../assets/getOut.png'
 import AuthContext from '../auth'
+import ModalAuth from "./ModalAuth"
 
 const NavBar = () => {
+
+    const [authWindow, setAuthWindow] = useState(false);
 
     const { fetchWithCSRF, setCurrentUserId, currentUserId } = useContext(AuthContext);
     let history = useHistory();
@@ -21,6 +24,10 @@ const NavBar = () => {
         }
         logoutUser();
 
+    }
+
+    const showLogin = e => {
+        setAuthWindow(!authWindow)
     }
 
     return (
@@ -46,9 +53,9 @@ const NavBar = () => {
                     </div> :
                     <div className="navbar-rightside">
                         <div >
-                            <a href="/signin">
-                                <button className="navbar-button">Sign In</button>
-                            </a>
+
+                            <button className="navbar-button" onClick={showLogin} >Sign In</button>
+
                         </div>
                         <div>
                             <a href="/sign-up">
@@ -57,7 +64,11 @@ const NavBar = () => {
                         </div>
                     </div>
                 }
+                <div className="login-window">
+                    <ModalAuth closeWindow={showLogin} authWindow={authWindow} />
+                </div>
             </div>
+
         </div>
     )
 }
