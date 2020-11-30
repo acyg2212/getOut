@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useContext } from "react";
+import AuthContext from "../auth";
 import Campsites from './Campsites';
 import ModalWindow from "./ModalWindow";
 
@@ -12,6 +14,7 @@ const SinglePlace = (props) => {
     const [campsites, setCampsites] = useState([])
     const [show, setShow] = useState(false);
     const [campsite, setCampsite] = useState(null)
+    const { fetchWithCSRF } = useContext(AuthContext)
 
 
     const showModal = e => {
