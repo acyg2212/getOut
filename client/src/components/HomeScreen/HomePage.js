@@ -2,6 +2,10 @@ import React, { useEffect, useState, useContext } from 'react'
 import AuthContext from '../../auth'
 import SiteCard from './SiteCard'
 import landScape from '../../assets/landscape.jpg'
+import newyork from '../../assets/newyork.jpg'
+import colorado from '../../assets/colorado.jpg'
+import california from '../../assets/california.jpg'
+import washington from '../../assets/washington.jpg'
 
 
 const HomePage = () => {
@@ -89,8 +93,32 @@ const HomePage = () => {
                 </div>
             </form>
             <img className="landscape-img" src={landScape} alt="landscape of rocks and sand" />
-
+            <div className="places-to-visit-container">
+                <h2>Venture anywhere</h2>
+                <div className="state-sites-div">
+                    <button className="state-sites-button" onClick={e => { setSelectedValue("Camping"); setSearchValue("California"); searchBarFunction(e) }}>
+                        <img className="state-sites-img" src={california} alt="a tent with sun shining through trees" />
+                        <h4>California</h4>
+                    </button>
+                    <button className="state-sites-button" onClick={e => { setSelectedValue("Camping"); setSearchValue("New York"); searchBarFunction(e) }}>
+                        <img className="state-sites-img" src={newyork} alt="a couple of cabins" />
+                        <h4>New York</h4>
+                    </button>
+                    <button className="state-sites-button" onClick={e => { setSelectedValue("Camping"); setSearchValue("Washington"); searchBarFunction(e) }}>
+                        <img className="state-sites-img" src={washington} alt="tent in the woods" />
+                        <h4>Washington</h4>
+                    </button>
+                    <button className="state-sites-button" onClick={e => { setSelectedValue("Camping"); setSearchValue("Colorado"); searchBarFunction(e) }}>
+                        <img className="state-sites-img" src={colorado} alt="campsite" />
+                        <h4>Colorado</h4>
+                    </button>
+                </div>
+            </div>
+            <div>
+                {searchData ? <h2>Adventures for {searchValue}</h2> : ""}
+            </div>
             <div className="search-results-container">
+
                 {searchData ? searchData.map(site => {
                     return (
                         <div key={site.FacilityID} className="search-results-div">
