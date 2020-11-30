@@ -233,6 +233,10 @@ a{
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 25px;
+    height:675;
+    background-image: url('/Users/aaroncygnarowicz/Desktop/coding/getOut/client/src/assets/camp-background.jpg');
+    background-size: cover;
+    background-position: bottom;
     
 }
 
@@ -319,9 +323,20 @@ h4{
     justify-content: end;
 }
 
+.trips-trips-link{
+    display: grid;
+    grid-template-columns: 150px 300px 100px;
+    color: white;
+    text-emphasis: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
 .trips-wishlist-link{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 300px 100px;
+    color: white;
+    text-emphasis: bold;
+    text-shadow: 1px 1px 2px black;
 }
 
 .delete-trip-button{

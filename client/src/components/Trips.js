@@ -61,7 +61,7 @@ const Trips = () => {
                 return (
                     <div key={index} className="trip-line">
                         <a href={`/${trip.facility_id}`} className='link-wishlist'>
-                            <div className="trips-wishlist-link">
+                            <div className="trips-trips-link">
                                 <h4>{convertDate(trip.date_traveled)}</h4>
                                 <h4>{trip.site_name}</h4>
                                 <h4>{trip.campName}</h4>

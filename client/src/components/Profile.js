@@ -5,6 +5,7 @@ import WishList from './WishList';
 import Reviews from './Reviews';
 
 
+
 const Profile = () => {
     const { currentUserId } = useContext(AuthContext);
     const [profileToggle, setProfileToggle] = useState("1")
@@ -29,9 +30,7 @@ const Profile = () => {
 
     return (
         <div className="profile-container">
-            <div className="profile-first-name">
-                <h1>{firstName}</h1>
-            </div>
+
             <div className="profile-right-side">
                 <div className="profile-trip-div">
                     <button className="profile-buttons" onClick={profileSwitch} value="1">Trips</button>
