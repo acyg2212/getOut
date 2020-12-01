@@ -333,8 +333,10 @@ h4{
 
 .profile-trip-header{
     text-decoration: underline;
+    text-shadow: 1px 1px 2px white;
     display: flex;
     justify-content: end;
+    font-size: 20px;
 }
 
 .trips-trips-link{
@@ -343,6 +345,7 @@ h4{
     color: white;
     text-emphasis: bold;
     text-shadow: 1px 1px 2px black;
+    font-size: 20px;
 }
 
 .trips-wishlist-link{
@@ -477,22 +480,22 @@ a:hover{
 
 /* sign up  */
 
-.sign-up-container{
+/* .sign-up-container{
     height:500px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .sign-up-form{
      display: flex;
     flex-flow: column;
     align-items: center;
-    border: 2px olive solid;
+    /* border: 2px olive solid; */
     border-radius: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    min-width: 250px;
-    min-height: 250px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    /* min-width: 250px;
+    min-height: 250px; */
 }

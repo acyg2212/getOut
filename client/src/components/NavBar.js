@@ -6,7 +6,7 @@ import ModalAuth from "./ModalAuth"
 
 const NavBar = () => {
 
-    const [authWindow, setAuthWindow] = useState(false);
+    const [authWindow, setAuthWindow] = useState("0");
 
     const { fetchWithCSRF, setCurrentUserId, currentUserId } = useContext(AuthContext);
     let history = useHistory();
@@ -27,7 +27,7 @@ const NavBar = () => {
     }
 
     const showLogin = e => {
-        setAuthWindow(!authWindow)
+        setAuthWindow(e.target.value)
     }
 
     return (
@@ -54,13 +54,13 @@ const NavBar = () => {
                     <div className="navbar-rightside">
                         <div >
 
-                            <button className="navbar-button" onClick={showLogin} >Sign In</button>
+                            <button className="navbar-button" value="1" onClick={showLogin} >Sign In</button>
 
                         </div>
                         <div>
-                            <a href="/sign-up">
-                                <button className="navbar-button">Sign Up</button>
-                            </a>
+
+                            <button onClick={showLogin} value="2" className="navbar-button">Sign Up</button>
+
                         </div>
                     </div>
                 }
