@@ -5,6 +5,13 @@ a{
     color: black;
 }
 
+header{
+    position: fixed;
+    width:100%;
+    z-index: 1;
+    top:0;
+}
+
 .navbar-logo {
     height: 100px;
 }
@@ -46,13 +53,13 @@ a{
 
 /* home */
 .home-container{
-    top:40px;
+    top:100px;
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-   padding-bottom: 25px;
+   padding-bottom: 55px;
 }
 
 
@@ -77,6 +84,7 @@ a{
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 25px;
+    padding-bottom: 55px;
 }
 
 .search-bar{
@@ -400,8 +408,12 @@ footer{
     width: 99%;
     padding-bottom: 15px;
     background-color: rgba(255, 255, 255, 1);
-    height:2em;
+    /* height:2em; */
     
+}
+
+.footer-icon-link{
+    font-size: 3rem;
 }
 
 .footer-link{
@@ -409,6 +421,10 @@ footer{
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 25px;
+}
+
+.about-me-h4{
+    font-size: 20px;
 }
 
 .footer-container{

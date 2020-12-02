@@ -36,9 +36,13 @@ const Footer = () => {
                 </div>
             </div>
             <div className="about-me-links">
-                <h4>About Me</h4>
-                <a href="https://github.com/acyg2212">Github</a>
-                <a href="https://acyg2212.github.io/">Personal Site</a>
+                <h4 className="about-me-h4">About Me</h4>
+                <a className="footer-icon-link" href="https://github.com/acyg2212">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a className="footer-icon-link" href="https://acyg2212.github.io/">
+                    <i class="far fa-address-card"></i>
+                </a>
             </div>
         </div>
     )

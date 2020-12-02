@@ -60,6 +60,7 @@ const HomePage = () => {
                 let data = responseData.response
                 let javaData = JSON.parse(data)
                 setSearchData(javaData.RECDATA)
+                window.scrollTo(0, 900);
 
             }
         }
@@ -117,7 +118,7 @@ const HomePage = () => {
             <div>
                 {searchData ? <h2>Adventures for {searchValue}</h2> : ""}
             </div>
-            <div className="search-results-container">
+            <div id="search" className="search-results-container">
 
                 {searchData ? searchData.map(site => {
                     return (

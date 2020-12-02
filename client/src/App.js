@@ -61,7 +61,9 @@ function App() {
       {loading && <div>Loading...</div>}
       {!loading &&
         <BrowserRouter>
-          <NavBar currentUserId={currentUserId} />
+          <header>
+            <NavBar currentUserId={currentUserId} />
+          </header>
           <Switch>
             <Route exact path='/' component={HomePage} currentUserId={currentUserId} />
             <AuthRoute exact path='/signin' component={SignIn} currentUserId={currentUserId} />
