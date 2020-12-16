@@ -11,6 +11,7 @@ const ModalWindow = (props) => {
     const [camp, setCamp] = useState(null)
     const facilityName = props.facilityName;
     let history = useHistory();
+    console.log(props)
 
     useEffect(() => {
         async function getCampsite() {

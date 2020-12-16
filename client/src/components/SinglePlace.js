@@ -13,10 +13,9 @@ const SinglePlace = (props) => {
     const [show, setShow] = useState(false);
     const [campsite, setCampsite] = useState(null)
 
-
-
     const showModal = e => {
-        setCampsite(e.target.value)
+        console.log(e.target.getAttribute('value'));
+        setCampsite(e.target.getAttribute('value'));
         setShow(!show)
     }
 
@@ -87,7 +86,9 @@ const SinglePlace = (props) => {
                 {campsites.length > 0 ? campsites.map(campsite => {
                     return (
                         <button className="campsite-card-button" onClick={showModal} key={campsite.CampsiteID} value={campsite.CampsiteID}>
-                            <Campsites campsite={campsite} />
+                            <div value={campsite.CampsiteID}>
+                                <Campsites campsite={campsite} value={campsite.CampsiteID} />
+                            </div>
                         </button>)
                 }) : ""}
             </div>

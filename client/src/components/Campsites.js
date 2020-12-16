@@ -5,9 +5,9 @@ const Campsites = ({ campsite }) => {
 
     return (
 
-        <div className="campsite-card">
+        <div className="campsite-card" value={campsite.CampsiteID}>
 
-            {campsite.ENTITYMEDIA.length > 0 ? <img className="campsite-card-image" src={campsite.ENTITYMEDIA[0].URL} alt={campsite.Title} /> : <div className="campsite-no-image">No Image Available</div>}
+            {campsite.ENTITYMEDIA.length > 0 ? <img value={campsite.CampsiteID} className="campsite-card-image" src={campsite.ENTITYMEDIA[0].URL} alt={campsite.Title} /> : <div className="campsite-no-image">No Image Available</div>}
 
             <h3>{campsite.CampsiteName}</h3>
             <ul>
