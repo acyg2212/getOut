@@ -14,7 +14,6 @@ const SinglePlace = (props) => {
     const [campsite, setCampsite] = useState(null)
 
     const showModal = e => {
-        console.log(e.target.getAttribute('value'));
         setCampsite(e.target.getAttribute('value'));
         setShow(!show)
     }
